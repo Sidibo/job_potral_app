@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'add_application' %}" class="btn btn-dark mb-3">
+    ➕ Add Application
+</a>
+<div class="card p-4 shadow">
+<h4>Applications</h4>
+
+<table class="table table-hover">
+<tr><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>Job</th></tr>
+
+{% for app in applications %}
+<tr>
+<td>{{ app.user.name }}</td>
+<td>{{ app.user.email }}</td>
+<td>{{ app.user.phone }}</td>
+<td>{{ app.user.address }}</td>
+<td>{{ app.job.title }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

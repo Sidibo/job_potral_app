@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card p-4 shadow">
+<h4>Apply for {{ job.title }}</h4>
+{% if error %}
+<div class="alert alert-danger text-center">
+    {{ error }}
+</div>
+{% endif %}
+
+<form method="POST">
+{% csrf_token %}
+
+<select name="user" class="form-control mb-3">
+{% for user in users %}
+<option value="{{ user.id }}">{{ user.name }}</option>
+{% endfor %}
+</select>
+
+<button class="btn btn-primary">Apply</button>
+
+</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 mx-auto" style="max-width:600px; border-radius:15px;">
+        
+        <h3 class="text-center mb-2">➕ Post a New Job</h3>
+        <p class="text-center text-muted">Fill in the details below to list a new vacancy.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Job Title -->
+            <label class="mt-3">Job Position / Post</label>
+            <input type="text" name="title" class="form-control mb-3" placeholder="e.g. Software Engineer">
+
+            <!-- Company -->
+            <label>Company Name</label>
+            <input type="text" name="company" class="form-control mb-3" placeholder="e.g. Google">
+
+            <!-- Salary + Location Row -->
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Salary</label>
+                    <input type="number" name="salary" class="form-control mb-3" placeholder="e.g. 50000">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Location</label>
+                    <input type="text" name="location" class="form-control mb-3" placeholder="e.g. Bangalore">
+                </div>
+            </div>
+
+            <!-- Description -->
+            <label>Job Description</label>
+            <textarea name="description" class="form-control mb-4" rows="4"
+                placeholder="Describe roles and responsibilities..."></textarea>
+
+            <!-- Buttons -->
+            <button class="btn btn-dark w-100 mb-2">Post Job Now</button>
+
+            <a href="{% url 'jobs' %}" class="btn btn-outline-secondary w-100">
+                Cancel & Go Back
+            </a>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-4 shadow">
+<h4>Edit User</h4>
+
+<form method="POST">
+{% csrf_token %}
+<input name="name" value="{{ user.name }}" class="form-control mb-3">
+<input name="email" value="{{ user.email }}" class="form-control mb-3">
+<input name="phone" value="{{ user.phone }}" class="form-control mb-3">
+<input name="address" value="{{ user.address }}" class="form-control mb-3">
+<input name="qualification" value="{{ user.qualification }}" class="form-control mb-3">
+<textarea name="skills" class="form-control mb-3">{{ user.skills }}</textarea>
+<div class="d-flex justify-content-between mt-3">
+
+    <!-- Update button (left) -->
+    <button type="submit" class="btn btn-warning px-4">
+        Update
+    </button>
+
+    <!-- Back button (right) -->
+    <a href="{% url 'users' %}" class="btn btn-warning px-4">
+        Back
+    </a>
+
+</div>>
+</form>
+
+</div>
+{% endblock %}

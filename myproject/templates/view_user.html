@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+
+    <div class="card shadow-lg p-4" style="width: 500px; border-radius: 15px;">
+
+        <h3 class="text-center mb-3">👤 User Details</h3>
+        <p class="text-center text-muted mb-4">Detailed information of the user</p>
+
+        <hr>
+
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+        <p><strong>Address:</strong> {{ user.address }}</p>
+        <p><strong>Qualification:</strong> {{ user.qualification }}</p>
+        <p><strong>Skills:</strong> {{ user.skills }}</p>
+
+        <hr>
+
+        <!-- Back Button -->
+        <div class="d-flex justify-content-end">
+            <a href="{% url 'users' %}" class="btn btn-warning px-4">Back</a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

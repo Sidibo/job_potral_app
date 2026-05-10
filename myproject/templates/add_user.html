@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if error %}
+<div class="alert alert-danger text-center">
+    {{ error }}
+</div>
+{% endif %}
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 mx-auto" style="max-width:650px; border-radius:15px;">
+        
+        <h3 class="text-center mb-2">👤 Add New User</h3>
+        <p class="text-center text-muted">Enter user details to register a new applicant.</p>
+
+        <form method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+
+        <!-- Name -->
+        <label class="mt-3">Full Name</label>
+        <input type="text" name="name" id="name" class="form-control mb-1" placeholder="e.g. John Doe">
+        <small class="text-danger" id="nameError"></small>
+
+        <!-- Email -->
+        <label>Email</label>
+        <input type="email" name="email" id="email" class="form-control mb-1" placeholder="e.g. john@gmail.com">
+        <small class="text-danger" id="emailError"></small>
+
+        <!-- Phone + Qualification -->
+        <div class="row">
+            <div class="col-md-6">
+                <label>Phone</label>
+                <input type="text" name="phone" id="phone" class="form-control mb-1" placeholder="e.g. 9876543210">
+                <small class="text-danger" id="phoneError"></small>
+            </div>
+
+            <div class="col-md-6">
+                <label>Qualification</label>
+                <input type="text" name="qualification" id="qualification" class="form-control mb-1" placeholder="e.g. B.Tech / MBA">
+                <small class="text-danger" id="qualificationError"></small>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <label>Address</label>
+        <input type="text" name="address" id="address" class="form-control mb-1" placeholder="e.g. Kolkata">
+        <small class="text-danger" id="addressError"></small>
+
+        <!-- Skills -->
+        <label>Skills</label>
+        <input type="text" name="skills" id="skills" class="form-control mb-3" placeholder="e.g. Python, Django, SQL">
+        <small class="text-danger" id="skillsError"></small>
+
+        <!-- Buttons -->
+        <button class="btn btn-dark w-100 mb-2">Add User</button>
+
+        <a href="{% url 'users' %}" class="btn btn-outline-secondary w-100">
+            Cancel & Go Back
+        </a>
+
+        </form>
+    </div>
+</div>
+
+<!-- VALIDATION SCRIPT -->
+<script>
+function validateForm() {
+
+    let valid = true;
+
+    // clear old errors
+    document.querySelectorAll("small").forEach(e => e.innerText = "");
+
+    let fields = ["name","email","phone","qualification","address","skills"];
+
+    fields.forEach(field => {
+        let input = document.getElementById(field);
+        let error = document.getElementById(field + "Error");
+
+        if (input.value.trim() === "") {
+            error.innerText = "This field is required";
+            input.style.border = "1px solid red";
+            valid = false;
+        } else {
+            input.style.border = "1px solid #ced4da";
+        }
+    });
+
+    return valid;
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card p-4 shadow">
+<h3>Edit Job</h3>
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" name="title" value="{{ job.title }}" class="form-control mb-3">
+
+<input type="text" name="company" value="{{ job.company }}" class="form-control mb-3">
+
+<input type="text" name="location" value="{{ job.location }}" class="form-control mb-3">
+
+<input type="number" name="salary" value="{{ job.salary }}" class="form-control mb-3">
+
+<textarea name="description" class="form-control mb-3">{{ job.description }}</textarea>
+
+<div class="d-flex justify-content-between mt-3">
+    
+    <button class="btn btn-dark">Update</button>
+
+    <a href="{% url 'jobs' %}" class="btn btn-dark">Back</a>
+
+</div>
+</form>
+</div>
+
+{% endblock %}
