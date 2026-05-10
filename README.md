@@ -73,4 +73,4 @@ http://127.0.0.1:8000/
 
 ## 👨‍💻 Developed By
 
-Srijit Bhattacharya & Team
+Srijit Bhattacharya 
