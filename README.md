@@ -36,9 +36,35 @@ A Job Portal Management System built using Django, Python, Bootstrap, and MySQL/
 ## 📂 Project Structure
 
 ```bash
+
 job_app/
 │
 ├── myproject/
 ├── myapp/
 ├── templates/
 ├── manage.py
+
+## ▶️ Run Project
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+Open:
+```
+http://127.0.0.1:8000/
+🔐 Validation
+Unique Email Validation
+Duplicate Application Prevention
+Empty Field Validation
+📌 Future Improvements
+Login System
+Resume Upload
+Email Notifications
+Search & Filter
+👨‍💻 Developed By
+Srijit Bhattacharya & Team
+
+Then save the file inside your project folder.
+
+```bash
