@@ -45,27 +45,32 @@ job_app/
 ├── manage.py
 
 ## ▶️ Run Project
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+
 Open:
+
 ```bash
 http://127.0.0.1:8000/
 ```
-🔐 Validation
-Unique Email Validation
-Duplicate Application Prevention
-Empty Field Validation
-📌 Future Improvements
-Login System
-Resume Upload
-Email Notifications
-Search & Filter
-👨‍💻 Developed By
+
+## 🔐 Validation
+
+- Unique Email Validation
+- Duplicate Application Prevention
+- Empty Field Validation
+
+## 📌 Future Improvements
+
+- Login System
+- Resume Upload
+- Email Notifications
+- Search & Filter
+
+## 👨‍💻 Developed By
+
 Srijit Bhattacharya & Team
-
-Then save the file inside your project folder.
-
-```bash
