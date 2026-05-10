@@ -13,7 +13,6 @@ A Job Portal Management System built using Django, Python, Bootstrap, and MySQL/
 - Email Validation
 - Responsive Dashboard UI
 - Application Tracking
-
 ---
 
 ## 🛠️ Technologies Used
